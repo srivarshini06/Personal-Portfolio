@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio | Modern UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      window.tailwind = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            boxShadow: {
+              glow: '0 0 80px rgba(56, 189, 248, 0.18)',
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      (function () {
+        const storedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white selection:bg-blue-500 selection:text-white overflow-x-hidden transition-colors duration-300">
+    <div id="pageLoader" class="fixed inset-0 z-50 grid place-items-center bg-gray-900 text-white transition-opacity duration-500 opacity-100">
+      <div class="flex flex-col items-center gap-4">
+        <div class="h-14 w-14 rounded-full border-4 border-cyan-400/80 border-t-transparent animate-spin"></div>
+        <p class="text-sm uppercase tracking-[0.3em] text-gray-200">Loading portfolio</p>
+      </div>
+    </div>
+    <div id="scrollProgress" class="fixed inset-x-0 top-0 h-1 bg-cyan-500/90 opacity-0 transition-all duration-300"></div>
+    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.16),_transparent_16%),radial-gradient(circle_at_20%_bottom,_rgba(168,85,247,0.16),_transparent_18%),radial-gradient(circle_at_right,_rgba(59,130,246,0.12),_transparent_24%)] dark:opacity-75"></div>
+    <header class="sticky top-0 z-40 border-b border-gray-200 bg-white/90 backdrop-blur-xl shadow-sm transition-colors duration-300 dark:border-gray-800 dark:bg-gray-900/95">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
+        <a href="#home" class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Sri Varshini M S</a>
+        <div class="hidden items-center gap-8 md:flex">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="flex items-center gap-2 md:gap-3">
+          <a href="./resume.txt" download class="hidden sm:inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-900 transition hover:border-blue-500 hover:text-blue-600 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-blue-400">
+            📄 Resume
+          </a>
+          <button id="themeToggle" class="rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-900 transition hover:border-blue-500 hover:text-blue-600 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-blue-400 dark:hover:text-white">
+            Dark mode
+          </button>
+          <button class="md:hidden rounded-full border border-gray-300 bg-white p-3 text-gray-900 transition hover:border-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-blue-400">
+            <span class="block h-1.5 w-5 rounded-full bg-current"></span>
+            <span class="mt-1 block h-1.5 w-5 rounded-full bg-current"></span>
+            <span class="mt-1 block h-1.5 w-5 rounded-full bg-current"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="relative overflow-hidden">
+      <section id="home" class="relative mx-auto flex min-h-[86vh] max-w-7xl items-center px-6 py-16 md:px-8">
+        <div class="relative z-10 flex w-full flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-2xl space-y-6">
+            <span class="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-700 dark:text-cyan-200 backdrop-blur-sm">
+              <span class="h-2.5 w-2.5 rounded-full bg-cyan-500 shadow-[0_0_16px_rgba(56,189,248,0.5)]"></span>
+              Aspiring Full Stack Developer | Interested in Cybersecurity & Cloud Computing
+            </span>
+            <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-7xl">
+              I’m Sri Varshini M S.
+              <span class="block text-cyan-700 dark:text-cyan-300">Computer Science undergraduate building practical web systems with React and modern UI patterns.</span>
+            </h1>
+            <p id="typingText" class="mt-4 text-2xl font-semibold text-cyan-700 dark:text-cyan-300 sm:text-3xl"></p>
+            <p class="max-w-xl text-lg leading-8 text-gray-700 dark:text-gray-300">
+              I am a second-year Computer Science student with a strong foundation in C++, Python, and data structures, supported by hands-on React frontend experience. I enjoy applying academic concepts to polished, responsive web interfaces while learning cybersecurity and cloud technologies.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+              <a href="#projects" class="btn-primary bg-blue-600 text-white dark:bg-blue-500 dark:text-white">View Projects</a>
+              <a href="#contact" class="btn-secondary border-gray-700 text-gray-900 dark:border-gray-600 dark:text-white">Contact</a>
+              <a href="./resume.txt" download class="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-500/60 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-700 transition hover:border-cyan-600 hover:bg-cyan-500/20 dark:border-cyan-400/60 dark:text-cyan-200 dark:hover:border-cyan-300 dark:hover:bg-cyan-500/20">
+                📄 Download Resume
+              </a>
+            </div>
+          </div>
+          <div class="relative flex aspect-[4/5] w-full max-w-xl items-center justify-center rounded-[2rem] border border-gray-200/60 bg-white/70 p-8 shadow-glow backdrop-blur-2xl transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800/70 sm:p-10">
+            <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-cyan-500/10 via-blue-500/0 to-violet-500/5 blur-3xl"></div>
+            <div class="relative z-10 flex h-full w-full flex-col justify-between gap-6 rounded-[1.75rem] border border-gray-200/70 bg-white/95 p-6 shadow-2xl backdrop-blur-lg transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800/85 sm:p-8">
+              <div class="space-y-4">
+                <span class="text-sm uppercase tracking-[0.36em] text-cyan-700 dark:text-cyan-200">Featured Highlights</span>
+                <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">React UI and systems work</h2>
+                <p class="text-gray-700 dark:text-gray-300">Frontend development experience from academic coursework and a real-world internship in a Salon Management System.</p>
+              </div>
+              <div class="space-y-3 rounded-3xl border border-cyan-500/10 bg-gray-100/85 p-6 text-gray-700 shadow-inner transition-colors duration-300 dark:border-cyan-500/20 dark:bg-gray-800/80 dark:text-gray-300">
+                <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                  <span>Internship experience</span>
+                  <span class="font-semibold text-gray-900 dark:text-white">Java Full Stack</span>
+                </div>
+                <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                  <span>Academic projects</span>
+                  <span class="font-semibold text-gray-900 dark:text-white">System design focus</span>
+                </div>
+                <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                  <span>Learning focus</span>
+                  <span class="font-semibold text-gray-900 dark:text-white">Cybersecurity & AWS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section-bg fade-in mx-auto max-w-7xl px-6 py-24 md:px-8 bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+        <div class="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <div class="space-y-6">
+            <span class="text-sm uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">About Me</span>
+            <h2 class="text-4xl font-semibold text-gray-900 dark:text-white sm:text-5xl">Computer Science undergraduate with practical development experience.</h2>
+            <p class="max-w-2xl text-lg leading-8 text-gray-700 dark:text-gray-300">I recently completed my second year of engineering with a strong foundation in C++, Python, and data structures, and hands-on frontend experience in React. I completed a Java Full Stack internship working on a Salon Management System, and I am actively learning cybersecurity, cloud computing, and emerging technology trends.</p>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-3xl border border-gray-200/70 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)] p-6 transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800 dark:shadow-none">
+                <p class="text-sm uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">Role</p>
+                <p class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Computer Science Undergraduate</p>
+              </div>
+              <div class="rounded-3xl border border-gray-200/70 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)] p-6 transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800 dark:shadow-none">
+                <p class="text-sm uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">Focus</p>
+                <p class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Full Stack development & cybersecurity fundamentals</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-[2rem] border border-gray-200/70 bg-white/95 p-8 shadow-2xl backdrop-blur-2xl transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800/80">
+            <div class="flex h-full flex-col justify-between gap-6">
+              <div class="rounded-3xl border border-cyan-500/10 bg-white/90 p-6 shadow-inner transition-colors duration-300 dark:border-cyan-500/20 dark:bg-gray-800/80">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">How I work</h3>
+                <p class="mt-4 text-gray-700 dark:text-gray-300">I combine strong engineering fundamentals with practical frontend and internship experience. I prioritize clean, responsive interfaces and reliable workflows while continuing to expand my skills in cloud and security.</p>
+              </div>
+              <div class="rounded-3xl bg-white/95 p-6 transition-colors duration-300 dark:bg-gray-900/90">
+                <p class="text-sm uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">Skills</p>
+                <div class="mt-6 flex flex-wrap gap-3 text-gray-900 dark:text-white">
+                  <span class="badge">C++</span>
+                  <span class="badge">Python</span>
+                  <span class="badge">Java</span>
+                  <span class="badge">React</span>
+                  <span class="badge">HTML & CSS</span>
+                  <span class="badge">JavaScript</span>
+                  <span class="badge">MySQL</span>
+                  <span class="badge">AWS basics</span>
+                  <span class="badge">Git & GitHub</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="fade-in mx-auto max-w-7xl px-6 py-24 md:px-8 bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+        <div class="mb-12 mx-auto max-w-3xl text-center">
+          <span class="text-sm uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">Skills</span>
+          <h2 class="mt-4 text-4xl font-semibold text-gray-900 dark:text-white sm:text-5xl">Technical strengths for web, systems, and cloud learning.</h2>
+          <p class="mt-4 text-lg leading-8 text-gray-700 dark:text-gray-300">A balanced skill set across programming, web development, databases, and emerging technologies.</p>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <div class="rounded-[2rem] border border-gray-200/70 bg-gray-100/85 p-8 shadow-sm transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800/80">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Programming & Core Concepts</h3>
+            <ul class="mt-6 space-y-3 text-gray-700 dark:text-gray-300">
+              <li>• C++, Python, Java</li>
+              <li>• Data Structures & Algorithms</li>
+              <li>• OOPS, DBMS, OS, Computer Networks</li>
+            </ul>
+          </div>
+          <div class="rounded-[2rem] border border-gray-200/70 bg-gray-100/85 p-8 shadow-sm transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800/80">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Web Development & Databases</h3>
+            <ul class="mt-6 space-y-3 text-gray-700 dark:text-gray-300">
+              <li>• HTML, CSS, JavaScript</li>
+              <li>• React (basic)</li>
+              <li>• MySQL</li>
+            </ul>
+          </div>
+          <div class="rounded-[2rem] border border-gray-200/70 bg-gray-100/85 p-8 shadow-sm transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800/80">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Emerging Areas</h3>
+            <ul class="mt-6 space-y-3 text-gray-700 dark:text-gray-300">
+              <li>• Cybersecurity Fundamentals</li>
+              <li>• Cloud Computing (AWS basics)</li>
+              <li>• Machine Learning & AI (basic), IoT fundamentals</li>
+            </ul>
+          </div>
+          <div class="rounded-[2rem] border border-gray-200/70 bg-gray-100/85 p-8 shadow-sm transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800/80">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Tools</h3>
+            <ul class="mt-6 space-y-3 text-gray-700 dark:text-gray-300">
+              <li>• Git & GitHub</li>
+              <li>• Linux (basic)</li>
+              <li>• VS Code, terminal workflows</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="fade-in mx-auto max-w-7xl px-6 py-24 md:px-8 bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+        <div class="grid gap-12 lg:grid-cols-[1fr_0.75fr] lg:items-center">
+          <div class="space-y-6">
+            <span class="text-sm uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">Education</span>
+            <h2 class="text-4xl font-semibold text-gray-900 dark:text-white sm:text-5xl">Degree and academic background.</h2>
+            <p class="max-w-2xl text-lg leading-8 text-gray-700 dark:text-gray-300">Currently pursuing a Bachelor of Engineering in Computer Science with strong performance in programming and systems coursework.</p>
+          </div>
+          <div class="rounded-[2rem] border border-gray-200/70 bg-gray-100/85 p-8 shadow-sm transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800/80">
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">BE Computer Science Engineering</h3>
+            <p class="mt-4 text-gray-700 dark:text-gray-300">Sri Krishna College of Engineering and Technology, Coimbatore</p>
+            <div class="mt-6 grid gap-4 text-gray-700 dark:text-gray-300">
+              <div class="rounded-3xl bg-white/90 p-5 dark:bg-gray-900/90">
+                <p class="text-sm uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">Duration</p>
+                <p class="mt-2 font-semibold text-gray-900 dark:text-white">2024 – 2028</p>
+              </div>
+              <div class="rounded-3xl bg-white/90 p-5 dark:bg-gray-900/90">
+                <p class="text-sm uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">CGPA</p>
+                <p class="mt-2 font-semibold text-gray-900 dark:text-white">8.15</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="fade-in mx-auto max-w-7xl px-6 py-24 md:px-8 bg-gray-50 text-gray-900 dark:bg-gray-800 dark:text-white transition-colors duration-300">
+        <div class="mb-12 mx-auto max-w-3xl text-center space-y-4">
+          <span class="text-sm uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">Projects</span>
+          <h2 class="text-4xl font-semibold text-gray-900 dark:text-white sm:text-5xl">Recent work & selected case studies.</h2>
+          <p class="text-gray-700 dark:text-gray-300">Each project is crafted to deliver clarity, usability, and polished motion across every screen size.</p>
+        </div>
+        <div id="projectGrid" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="project-card fade-in rounded-[2rem] border border-gray-200/70 bg-white text-gray-900 shadow-md p-6 transition duration-500 hover:-translate-y-1 hover:border-cyan-400/30 dark:border-gray-700/30 dark:bg-gray-800 dark:text-white dark:shadow-none h-full flex flex-col justify-between">
+            <span class="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">Loading</span>
+            <div>
+              <h3 class="mt-4 text-2xl font-semibold text-gray-900 dark:text-white">Fetching projects...</h3>
+              <p class="mt-4 text-gray-700 dark:text-gray-300">Project cards are loaded dynamically from the backend API.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section-bg fade-in mx-auto max-w-7xl px-6 py-24 md:px-8 bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+        <div class="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+          <div class="space-y-6">
+            <span class="text-sm uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">Get in touch</span>
+            <h2 class="text-4xl font-semibold text-gray-900 dark:text-white sm:text-5xl">Let’s bring your next idea to life.</h2>
+            <p class="max-w-xl text-lg leading-8 text-gray-700 dark:text-gray-300">Whether you want a refreshed portfolio, a product landing page, or a polished web presence, I’m ready to help build something memorable.</p>
+            <div class="space-y-4 rounded-3xl border border-gray-200/70 bg-white shadow-inner p-6 transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800/80">
+              <div class="flex items-start gap-4">
+                <span class="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-700 dark:text-cyan-300">✉️</span>
+                <div>
+                  <p class="text-sm uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">Email</p>
+                  <p class="mt-2 text-gray-900 dark:text-white">srivarshinims2906@gmail.com</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-violet-500/10 text-violet-700 dark:text-violet-300">📍</span>
+                <div>
+                  <p class="text-sm uppercase tracking-[0.28em] text-violet-700 dark:text-violet-300">Location</p>
+                  <p class="mt-2 text-gray-900 dark:text-white">Coimbatore, India</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white">📞</span>
+                <div>
+                  <p class="text-sm uppercase tracking-[0.28em] text-gray-700 dark:text-gray-300">Phone</p>
+                  <p class="mt-2 text-gray-900 dark:text-white">+91 8248031599</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <form id="contactForm" class="rounded-[2rem] border border-gray-200/70 bg-white/95 p-8 shadow-2xl backdrop-blur-2xl transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800/85">
+            <div class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                <input id="contactName" type="text" placeholder="Your name" class="input-field" />
+                <p id="nameError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden">Please enter your name.</p>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                <input id="contactEmail" type="email" placeholder="you@example.com" class="input-field" />
+                <p id="emailError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden">Please enter a valid email.</p>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-900 dark:text-white">Message</label>
+                <textarea id="contactMessage" rows="5" placeholder="Tell me about your project" class="input-field"></textarea>
+                <p id="messageError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden">Please write a short message.</p>
+              </div>
+              <button type="submit" class="btn-primary w-full bg-blue-600 text-white dark:bg-blue-500 dark:text-white">Send message</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-200/70 bg-white/90 py-8 transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-900/90">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-center text-gray-700 dark:text-gray-400 md:flex-row md:text-left md:px-8">
+        <p>© 2026 Sri Varshini M S. Crafted with Tailwind CSS and vanilla JavaScript.</p>
+    </footer>
+
+    <div id="popup" class="fixed bottom-5 right-5 z-50 hidden max-w-xs rounded-2xl px-5 py-4 text-sm font-medium shadow-lg transition-all duration-300 opacity-0 translate-y-6 pointer-events-none" aria-live="polite"></div>
+    <button id="backToTop" aria-label="Back to top" class="hidden fixed bottom-6 right-6 z-40 rounded-full bg-gray-900/90 px-4 py-3 text-white shadow-2xl transition-transform duration-300 hover:-translate-y-1 hover:bg-gray-800 dark:bg-white/10 dark:text-white">↑</button>
+    <div id="cursor" class="hidden"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+
+
+

@@ -1,0 +1,40 @@
+Sri Varshini M S
+Computer Science Undergraduate | Aspiring Full Stack Developer
+
+CONTACT
+Email: srivarshinims2906@gmail.com
+Phone: +91 8248031599
+LinkedIn: https://www.linkedin.com/in/sri-varshini-ms-96b6b532b
+GitHub: https://github.com/srivarshini06
+
+ABOUT
+Computer Science undergraduate who has completed the second year with a strong foundation in C++, Python, and data structures. Experienced in frontend development with React and completed a Java Full Stack internship contributing to a Salon Management System. Interested in cybersecurity, cloud computing, and practical application of new technologies.
+
+SKILLS
+- Programming: C++, Python, Java
+- Core Concepts: Data Structures & Algorithms, OOPS, DBMS, OS, Computer Networks
+- Web Development: HTML, CSS, JavaScript, React (basic)
+- Databases: MySQL
+- Other Areas: Cybersecurity Fundamentals, Cloud Computing (AWS basics), Machine Learning & AI (basic), IoT fundamentals
+- Tools: Git, GitHub, Linux (basic)
+
+PROJECTS / EXPERIENCE
+Salon Management System
+- Developed frontend using React during Java Full Stack internship
+- Implemented booking workflows and UI features
+
+Hiring Management System
+- Built as part of academic coursework
+- Focused on system design and core functionality
+
+ACTIVITIES
+- Participated in ideathons solving real-world problems
+- Member of Vision Squad; participated in Electrothon (Chennai Institute of Technology)
+- Attended XR workshop at Thiran Fest 2025
+- Completed Google Cybersecurity courses
+- Completed AWS Cloud Computing Essentials (SimuLearn)
+
+EDUCATION
+BE Computer Science Engineering (2024–2028)
+Sri Krishna College of Engineering and Technology, Coimbatore
+CGPA: 8.15
