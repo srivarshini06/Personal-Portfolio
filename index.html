@@ -59,9 +59,9 @@
           <a href="#contact" class="nav-link">Contact</a>
         </div>
         <div class="flex items-center gap-2 md:gap-3">
-          <a href="./resume.txt" download class="hidden sm:inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-900 transition hover:border-blue-500 hover:text-blue-600 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-blue-400">
-            📄 Resume
-          </a>
+         <a href="resume.pdf" target="_blank" class="hidden sm:inline-flex items-center justify-center rounded-full border border-blue-500 bg-transparent px-3 py-2 text-sm font-medium text-blue-600 transition hover:bg-blue-500 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-black">
+  View Resume
+</a>
           <button id="themeToggle" class="rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-900 transition hover:border-blue-500 hover:text-blue-600 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-blue-400 dark:hover:text-white">
             Dark mode
           </button>
@@ -83,9 +83,14 @@
               Aspiring Full Stack Developer | Interested in Cybersecurity & Cloud Computing
             </span>
             <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-7xl">
-              I’m Sri Varshini M S.
-              <span class="block text-cyan-700 dark:text-cyan-300">Computer Science undergraduate building practical web systems with React and modern UI patterns.</span>
-            </h1>
+  <span class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
+    I’m Sri Varshini M S.
+  </span>
+
+  <span class="block mt-2 text-cyan-700 dark:text-cyan-300 text-4xl sm:text-5xl lg:text-6xl">
+    Computer Science undergraduate building practical web systems with React and modern UI patterns.
+  </span>
+</h1>
             <p id="typingText" class="mt-4 text-2xl font-semibold text-cyan-700 dark:text-cyan-300 sm:text-3xl"></p>
             <p class="max-w-xl text-lg leading-8 text-gray-700 dark:text-gray-300">
               I am a second-year Computer Science student with a strong foundation in C++, Python, and data structures, supported by hands-on React frontend experience. I enjoy applying academic concepts to polished, responsive web interfaces while learning cybersecurity and cloud technologies.
@@ -93,8 +98,9 @@
             <div class="flex flex-wrap items-center gap-4">
               <a href="#projects" class="btn-primary bg-blue-600 text-white dark:bg-blue-500 dark:text-white">View Projects</a>
               <a href="#contact" class="btn-secondary border-gray-700 text-gray-900 dark:border-gray-600 dark:text-white">Contact</a>
-              <a href="./resume.txt" download class="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-500/60 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-700 transition hover:border-cyan-600 hover:bg-cyan-500/20 dark:border-cyan-400/60 dark:text-cyan-200 dark:hover:border-cyan-300 dark:hover:bg-cyan-500/20">
-                📄 Download Resume
+             <a href="https://www.linkedin.com/in/sri-varshini-m-s-96b6b532b/" target="_blank" class="btn-secondary border-gray-700 text-gray-900 dark:border-gray-600 dark:text-white">
+  My LinkedIn
+</a>
               </a>
             </div>
           </div>
@@ -280,26 +286,36 @@
               </div>
             </div>
           </div>
-          <form id="contactForm" class="rounded-[2rem] border border-gray-200/70 bg-white/95 p-8 shadow-2xl backdrop-blur-2xl transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800/85">
-            <div class="space-y-6">
-              <div>
-                <label class="block text-sm font-medium text-gray-900 dark:text-white">Name</label>
-                <input id="contactName" type="text" placeholder="Your name" class="input-field" />
-                <p id="nameError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden">Please enter your name.</p>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                <input id="contactEmail" type="email" placeholder="you@example.com" class="input-field" />
-                <p id="emailError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden">Please enter a valid email.</p>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-900 dark:text-white">Message</label>
-                <textarea id="contactMessage" rows="5" placeholder="Tell me about your project" class="input-field"></textarea>
-                <p id="messageError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden">Please write a short message.</p>
-              </div>
-              <button type="submit" class="btn-primary w-full bg-blue-600 text-white dark:bg-blue-500 dark:text-white">Send message</button>
-            </div>
-          </form>
+          <form action="https://formspree.io/f/mrejaenp" method="POST" id="contactForm" class="rounded-[2rem] border border-gray-200/70 bg-white/95 p-8 shadow-2xl backdrop-blur-2xl transition-colors duration-300 dark:border-gray-700/30 dark:bg-gray-800/85">
+  <div class="space-y-6">
+
+    <div>
+      <label class="block text-sm font-medium text-gray-900 dark:text-white">Name</label>
+      <input id="contactName" name="name" type="text" placeholder="Your name" class="input-field" required />
+      <p id="nameError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden">Please enter your name.</p>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-900 dark:text-white">Email</label>
+      <input id="contactEmail" name="email" type="email" placeholder="you@example.com" class="input-field" required />
+      <p id="emailError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden">Please enter a valid email.</p>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-900 dark:text-white">Message</label>
+      <textarea id="contactMessage" name="message" rows="5" placeholder="Tell me about your project" class="input-field" required></textarea>
+      <p id="messageError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden">Please write a short message.</p>
+    </div>
+
+    <!-- Optional but recommended -->
+    <input type="hidden" name="_subject" value="New message from portfolio!" />
+
+    <button type="submit" class="btn-primary w-full bg-blue-600 text-white dark:bg-blue-500 dark:text-white">
+      Send message
+    </button>
+
+  </div>
+</form>
         </div>
       </section>
     </main>
